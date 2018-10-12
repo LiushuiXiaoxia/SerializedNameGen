@@ -1,4 +1,4 @@
-<idea-plugin version="2">
+<idea-plugin>
     <id>cn.mycommons.serializednamegen</id>
     <name>SerializedNameGen</name>
     <version>0.1</version>
@@ -8,7 +8,7 @@
     </vendor>
 
     <description><![CDATA[
-      SerializedNameGen
+      Gson SerializedName Annotation Generator Plugin
     ]]></description>
 
     <change-notes><![CDATA[
