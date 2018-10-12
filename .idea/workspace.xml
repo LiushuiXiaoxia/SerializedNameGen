@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7759db5b-5b2d-4be9-9e17-3cad82428994" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/REAMDME.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/1.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SerializedNameGen.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SerializedNameGen.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerializedNameGen-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jars/SerializedNameGen-0.1.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -37,24 +32,24 @@
           <entry key="gitignore" value="7" />
           <entry key="java" value="1" />
           <entry key="kt" value="683" />
-          <entry key="md" value="658" />
-          <entry key="xml" value="69" />
+          <entry key="md" value="726" />
+          <entry key="xml" value="70" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="1" />
           <entry key="Kotlin" value="683" />
-          <entry key="Markdown" value="658" />
+          <entry key="Markdown" value="726" />
           <entry key="PLAIN_TEXT" value="7" />
-          <entry key="XML" value="69" />
+          <entry key="XML" value="70" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="22" />
           <entry key="gitignore" value="1" />
-          <entry key="iml" value="3" />
+          <entry key="iml" value="4" />
           <entry key="java" value="2" />
           <entry key="kt" value="6" />
           <entry key="md" value="1" />
@@ -64,7 +59,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="22" />
-          <entry key="IDEA_MODULE" value="3" />
+          <entry key="IDEA_MODULE" value="4" />
           <entry key="JAVA" value="2" />
           <entry key="Kotlin" value="6" />
           <entry key="Markdown" value="1" />
@@ -76,21 +71,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="32" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="32" />
+            <state relative-caret-position="51">
+              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/REAMDME.md">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="575">
-                <caret line="79" column="6" selection-start-line="79" selection-start-column="6" selection-end-line="79" selection-end-column="6" />
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="204">
+                <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
               </first_editor>
               <second_editor />
             </state>
@@ -133,8 +128,10 @@
         <option value="$PROJECT_DIR$/src/cn/mycommons/serializednamegen/GenAction.kt" />
         <option value="$PROJECT_DIR$/src/cn/mycommons/serializednamegen/ModifySource.kt" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/REAMDME.md" />
+        <option value="$PROJECT_DIR$/SerializedNameGen.iml" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
       </list>
     </option>
   </component>
@@ -176,6 +173,27 @@
             </path>
             <path>
               <item name="SerializedNameGen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SerializedNameGen" type="462c0819:PsiDirectoryNode" />
+              <item name="jars" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SerializedNameGen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SerializedNameGen" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SerializedNameGen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SerializedNameGen" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SerializedNameGen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SerializedNameGen" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SerializedNameGen" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -189,7 +207,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539348725793" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539349081401" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -199,6 +217,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/jars" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/docs" />
       <recent name="$PROJECT_DIR$/src/cn/mycommons/serializednamegen" />
@@ -252,12 +273,12 @@
       <workItem from="1539317955687" duration="6388000" />
       <workItem from="1539326481861" duration="123000" />
       <workItem from="1539346651516" duration="981000" />
-      <workItem from="1539347650553" duration="1022000" />
+      <workItem from="1539347650553" duration="1426000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10308000" />
+    <option name="totallyTimeSpent" value="10712000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="23" width="2048" height="1129" extended-state="6" />
@@ -279,7 +300,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32828283" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32760364" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.500501" side_tool="true" weight="0.32962587" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32875264" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -485,25 +506,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SerializedNameGen.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        <state relative-caret-position="204">
+          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="204">
+            <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REAMDME.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="575">
-            <caret line="79" column="6" selection-start-line="79" selection-start-column="6" selection-end-line="79" selection-end-column="6" />
-          </first_editor>
-          <second_editor />
+        <state relative-caret-position="51">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
         </state>
       </provider>
     </entry>
