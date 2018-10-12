@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamcity-plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:shemas-jetbrains-com:teamcity-plugin-v1-xml">
+    <info>
+        <name>GsonSerializedNameGen</name> <!-- the name of plugin used in teamcity -->
+        <display-name>This name may be used for UI</display-name>
+        <description>Some description goes here</description>
+        <version>0.239.42</version>
+    </info>
+    <requirements min-build="46654"
+        max-build="57000" /> <!-- specify compatible TeamCity server builds -->
+    <deployment use-separate-classloader="true" /> <!-- load server plugin's classes in separate classloader-->
+    <parameters>
+        <parameter name="key">value</parameter>
+        <!-- ... -->
+    </parameters>
+</teamcity-plugin>

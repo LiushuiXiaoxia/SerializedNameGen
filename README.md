@@ -6,7 +6,7 @@ GsonSerializedNameGen 是一个自动生成Gson SerializedName注解的插件。
 
 [下载地址](./jars)
 
-[Idea地址]()
+[插件地址](https://plugins.jetbrains.com/plugin/11225-gsonserializednamegen)
 
 # 介绍
 

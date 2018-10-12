@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7759db5b-5b2d-4be9-9e17-3cad82428994" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/META-INF/teamcity-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jars/SerializedNameGen-0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,7 +31,7 @@
           <entry key="gitignore" value="7" />
           <entry key="java" value="1" />
           <entry key="kt" value="683" />
-          <entry key="md" value="726" />
+          <entry key="md" value="728" />
           <entry key="xml" value="70" />
         </counts>
       </usages-collector>
@@ -38,7 +39,7 @@
         <counts>
           <entry key="JAVA" value="1" />
           <entry key="Kotlin" value="683" />
-          <entry key="Markdown" value="726" />
+          <entry key="Markdown" value="728" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="XML" value="70" />
         </counts>
@@ -50,19 +51,21 @@
           <entry key="iml" value="4" />
           <entry key="java" value="2" />
           <entry key="kt" value="6" />
-          <entry key="md" value="1" />
-          <entry key="xml" value="4" />
+          <entry key="md" value="2" />
+          <entry key="xml" value="6" />
+          <entry key="zip" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="ARCHIVE" value="3" />
           <entry key="CLASS" value="22" />
           <entry key="IDEA_MODULE" value="4" />
           <entry key="JAVA" value="2" />
           <entry key="Kotlin" value="6" />
-          <entry key="Markdown" value="1" />
+          <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="XML" value="4" />
+          <entry key="XML" value="6" />
         </counts>
       </usages-collector>
     </session>
@@ -73,8 +76,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="357">
-                <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+              <first_editor relative-caret-position="136">
+                <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -87,6 +90,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -119,8 +123,9 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/REAMDME.md" />
         <option value="$PROJECT_DIR$/SerializedNameGen.iml" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
+        <option value="$PROJECT_DIR$/resources/META-INF/teamcity-plugin.xml" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -163,6 +168,11 @@
             <path>
               <item name="SerializedNameGen" type="b2602c69:ProjectViewProjectNode" />
               <item name="SerializedNameGen" type="462c0819:PsiDirectoryNode" />
+              <item name="jars" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SerializedNameGen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SerializedNameGen" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -191,7 +201,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539349150957" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539350037823" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -257,15 +267,16 @@
       <workItem from="1539317955687" duration="6388000" />
       <workItem from="1539326481861" duration="123000" />
       <workItem from="1539346651516" duration="981000" />
-      <workItem from="1539347650553" duration="1671000" />
+      <workItem from="1539347650553" duration="2293000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10957000" />
+    <option name="totallyTimeSpent" value="11579000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="23" width="2048" height="1129" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24248497" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -494,18 +505,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/jars/SerializedNameGen-0.1.zip">
+      <provider selected="true" editor-type-id="apk-viewer" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        <state relative-caret-position="34">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="31" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/META-INF/teamcity-plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SerializedNameGen.zip">
+      <provider selected="true" editor-type-id="apk-viewer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="357">
-            <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <first_editor relative-caret-position="136">
+            <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
           </first_editor>
           <second_editor />
         </state>
