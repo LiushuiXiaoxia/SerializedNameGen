@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7759db5b-5b2d-4be9-9e17-3cad82428994" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/META-INF/teamcity-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -31,7 +30,7 @@
           <entry key="gitignore" value="7" />
           <entry key="java" value="1" />
           <entry key="kt" value="683" />
-          <entry key="md" value="728" />
+          <entry key="md" value="749" />
           <entry key="xml" value="70" />
         </counts>
       </usages-collector>
@@ -39,7 +38,7 @@
         <counts>
           <entry key="JAVA" value="1" />
           <entry key="Kotlin" value="683" />
-          <entry key="Markdown" value="728" />
+          <entry key="Markdown" value="749" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="XML" value="70" />
         </counts>
@@ -51,19 +50,19 @@
           <entry key="iml" value="4" />
           <entry key="java" value="2" />
           <entry key="kt" value="6" />
-          <entry key="md" value="2" />
+          <entry key="md" value="3" />
           <entry key="xml" value="6" />
-          <entry key="zip" value="3" />
+          <entry key="zip" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ARCHIVE" value="3" />
+          <entry key="ARCHIVE" value="4" />
           <entry key="CLASS" value="22" />
           <entry key="IDEA_MODULE" value="4" />
           <entry key="JAVA" value="2" />
           <entry key="Kotlin" value="6" />
-          <entry key="Markdown" value="2" />
+          <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="6" />
         </counts>
@@ -75,9 +74,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="136">
-                <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="404">
+                <caret line="101" column="19" selection-start-line="101" selection-start-column="19" selection-end-line="101" selection-end-column="19" />
               </first_editor>
               <second_editor />
             </state>
@@ -173,17 +172,6 @@
             <path>
               <item name="SerializedNameGen" type="b2602c69:ProjectViewProjectNode" />
               <item name="SerializedNameGen" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SerializedNameGen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SerializedNameGen" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SerializedNameGen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SerializedNameGen" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -201,7 +189,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539350037823" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539350382385" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -267,12 +255,12 @@
       <workItem from="1539317955687" duration="6388000" />
       <workItem from="1539326481861" duration="123000" />
       <workItem from="1539346651516" duration="981000" />
-      <workItem from="1539347650553" duration="2293000" />
+      <workItem from="1539347650553" duration="2539000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11579000" />
+    <option name="totallyTimeSpent" value="11825000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="23" width="2048" height="1129" extended-state="6" />
@@ -505,9 +493,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jars/SerializedNameGen-0.1.zip">
-      <provider selected="true" editor-type-id="apk-viewer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -525,11 +510,14 @@
     <entry file="file://$PROJECT_DIR$/SerializedNameGen.zip">
       <provider selected="true" editor-type-id="apk-viewer" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/jars/SerializedNameGen-0.1.zip">
+      <provider selected="true" editor-type-id="apk-viewer" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="136">
-            <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="404">
+            <caret line="101" column="19" selection-start-line="101" selection-start-column="19" selection-end-line="101" selection-end-column="19" />
           </first_editor>
           <second_editor />
         </state>

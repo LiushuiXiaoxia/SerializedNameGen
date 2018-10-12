@@ -4,7 +4,7 @@
 
 GsonSerializedNameGen 是一个自动生成Gson SerializedName注解的插件。
 
-[下载地址](./jars)
+[下载地址](https://github.com/LiushuiXiaoxia/SerializedNameGen/tree/master/jars)
 
 [插件地址](https://plugins.jetbrains.com/plugin/11225-gsonserializednamegen)
 
@@ -92,6 +92,14 @@ public class Bean {
 * 支持其他方式json序列化工具
 
 * 支持删除某一种json序列化工具别名
+
+## 其他工具
+
+[SerializedNameGen](https://github.com/LiushuiXiaoxia/SerializedNameGen)
+
+[AutoValueConvert](https://github.com/LiushuiXiaoxia/AutoValueConvert)
+
+[DatabindingConvert](https://github.com/LiushuiXiaoxia/DatabindingConvert)
 
 # 日志
 
