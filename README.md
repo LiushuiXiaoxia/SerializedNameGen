@@ -75,6 +75,14 @@ public class Bean {
 
 当前版本为基本版本，仅仅支持Java语言生成`SerializedName`注解。
 
+## 插件下载
+
+[下载地址](https://github.com/LiushuiXiaoxia/SerializedNameGen/tree/master/jars)
+
+[插件地址](https://plugins.jetbrains.com/plugin/11225-gsonserializednamegen)
+
+![插件安装](https://raw.githubusercontent.com/LiushuiXiaoxia/SerializedNameGen/master/docs/2.png)
+
 ## 示例演示
 
 ![示例演示](https://raw.githubusercontent.com/LiushuiXiaoxia/SerializedNameGen/master/docs/1.gif)
