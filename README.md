@@ -23,10 +23,8 @@ public class Bean {
     
     public class InnerA {
 
-        @SerializedName("Name")
         public String Name;
 
-        @SerializedName("max_age")
         public int max_age;
     }
 
@@ -79,7 +77,7 @@ public class Bean {
 
 ## 示例演示
 
-![示例演示](docs/1.gif)
+![示例演示](https://raw.githubusercontent.com/LiushuiXiaoxia/SerializedNameGen/master/docs/1.gif)
 
 # 其他
 
