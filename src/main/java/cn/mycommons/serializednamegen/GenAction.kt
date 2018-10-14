@@ -1,5 +1,9 @@
 package cn.mycommons.serializednamegen
 
+import cn.mycommons.serializednamegen.core.FileType
+import cn.mycommons.serializednamegen.core.IFileModify
+import cn.mycommons.serializednamegen.core.impl.JavaImpl
+import cn.mycommons.serializednamegen.core.impl.KotlinImpl
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.LangDataKeys
@@ -8,7 +12,11 @@ import com.intellij.openapi.command.WriteCommandAction
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
 import com.intellij.psi.PsiClass
+import com.intellij.psi.PsiElement
+import com.intellij.psi.PsiFile
 import com.intellij.psi.PsiJavaFile
+import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtFile
 
 open class GenAction : AnAction() {
 
@@ -56,11 +64,14 @@ open class GenAction : AnAction() {
 
             println("psiFile = $psiFile")
 
-            var isJava = false
-            var isKotlin = false
+            var fileType: FileType?
 
-            if (psiFile !is PsiJavaFile) {
-                msg = "No java file"
+            if (psiFile is PsiJavaFile) {
+                fileType = FileType.JavaFile
+            } else if (psiFile is KtFile) {
+                fileType = FileType.KotlinFile
+            } else {
+                msg = "is not java or kotlin file"
                 break
             }
 
@@ -68,8 +79,8 @@ open class GenAction : AnAction() {
 
             if (project != null) {
                 psiFile.children
-                        .filter { it is PsiClass }
-                        .forEach { modify(project, psiFile, it as PsiClass) }
+                        .filter { it is PsiClass || it is KtClass }
+                        .forEach { modify(project, psiFile, fileType, it) }
             }
         } while (false)
 
@@ -80,14 +91,22 @@ open class GenAction : AnAction() {
         }
     }
 
-    open fun modify(project: Project, javaFile: PsiJavaFile, clazz: PsiClass) {
+    open fun modify(project: Project, psiFile: PsiFile, fileType: FileType, clazz: PsiElement) {
         // 处理内部类
         clazz.children
-                .filter { it is PsiClass }
-                .forEach { modify(project, javaFile, it as PsiClass) }
+                .filter { it is PsiClass || it is KtClass }
+                .forEach { modify(project, psiFile, fileType, it) }
 
         WriteCommandAction.runWriteCommandAction(project) {
-            ModifySource(project, javaFile, clazz).modify()
+            val fileModify: IFileModify = when (fileType) {
+                FileType.JavaFile -> {
+                    JavaImpl(project, psiFile as PsiJavaFile, clazz as PsiClass)
+                }
+                FileType.KotlinFile -> {
+                    KotlinImpl(project, psiFile as KtFile, clazz as KtClass)
+                }
+            }
+            fileModify.modify()
         }
     }
 }
