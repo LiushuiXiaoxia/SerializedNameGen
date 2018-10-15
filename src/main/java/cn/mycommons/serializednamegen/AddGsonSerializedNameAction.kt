@@ -105,7 +105,7 @@ open class AddGsonSerializedNameAction : AnAction() {
                     println("it2 -> $it")
                     it is PsiClass
                             || it is KtClass
-                            || it is KtClassBody
+//                            || it is KtClassBody
                 }
                 .forEach {
                     print("it->${it.getKotlinFqName()}")
@@ -125,7 +125,7 @@ open class AddGsonSerializedNameAction : AnAction() {
                     }
                 }
             }
-//            fileModify?.modify()
+            fileModify?.modify()
         }
     }
 }
