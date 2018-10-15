@@ -18,7 +18,7 @@ import com.intellij.psi.PsiJavaFile
 import org.jetbrains.kotlin.psi.KtClass
 import org.jetbrains.kotlin.psi.KtFile
 
-open class GenAction : AnAction() {
+open class AddGsonSerializedNameAction : AnAction() {
 
     override fun update(event: AnActionEvent?) {
         super.update(event)

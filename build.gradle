@@ -37,7 +37,7 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.71"
-    testCompile "junit:junit:4.12"
+    compile 'com.google.code.gson:gson:2.8.5'
 }
 
 intellij {

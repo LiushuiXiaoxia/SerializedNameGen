@@ -2,12 +2,13 @@ package cn.mycommons.serializednamegen.core.impl
 
 import cn.mycommons.serializednamegen.core.IFileModify
 import com.intellij.openapi.project.Project
-import com.intellij.psi.PsiElementFactory
 import org.jetbrains.kotlin.lexer.KtModifierKeywordToken
+import org.jetbrains.kotlin.name.FqName
 import org.jetbrains.kotlin.psi.KtClass
 import org.jetbrains.kotlin.psi.KtFile
 import org.jetbrains.kotlin.psi.KtProperty
 import org.jetbrains.kotlin.psi.KtPsiFactory
+import org.jetbrains.kotlin.resolve.ImportPath
 import java.util.*
 
 /**
@@ -32,22 +33,21 @@ class KotlinImpl(private val project: Project,
         // 遍历所有字段
         psiClass.getProperties().forEach {
             if (it.modifierList?.hasModifier(KtModifierKeywordToken.keywordModifier("static")) == true) {
-                propertyList.add(it)
             }
+            propertyList.add(it)
         }
     }
 
     private fun addImport() {
         // 添加importSerializedName
-        psiFile.importList?.imports?.let { it ->
-            val find = it.find { item ->
-                println("item = $item")
-                item.name?.contains("SerializedName") ?: false
-            }
-            if (find == null) {
-                val factory = PsiElementFactory.SERVICE.getInstance(project)
-                psiFile.add(factory.createImportStatementOnDemand("com.google.gson.annotations"))
-            }
+        addImportIfNeed("com.google.gson.annotations.SerializedName")
+    }
+
+    private fun addImportIfNeed(import: String) {
+        val psiFactory = KtPsiFactory(project)
+        val importDirective = psiFactory.createImportDirective(ImportPath(FqName(import), false))
+        if (psiFile.importDirectives.none { it.importPath == importDirective.importPath }) {
+            psiFile.importList?.add(importDirective)
         }
     }
 

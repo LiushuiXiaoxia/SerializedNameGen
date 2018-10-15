@@ -6,6 +6,7 @@ import com.intellij.psi.PsiClass
 import com.intellij.psi.PsiElementFactory
 import com.intellij.psi.PsiField
 import com.intellij.psi.PsiJavaFile
+import com.intellij.psi.codeStyle.JavaCodeStyleManager
 import java.util.*
 
 /**
@@ -37,11 +38,14 @@ class JavaImpl(private val project: Project,
     }
 
     private fun addImport() {
+        val styleManager = JavaCodeStyleManager.getInstance(psiClass.project)
+
         // 添加importSerializedName
         psiFile.importList?.let { it ->
             if (it.findSingleImportStatement("SerializedName") == null) {
                 val factory = PsiElementFactory.SERVICE.getInstance(project)
-                it.add(factory.createImportStatementOnDemand("com.google.gson.annotations"))
+                val statement = factory.createImportStatementOnDemand("com.google.gson.annotations")
+                styleManager.shortenClassReferences(it.add(statement))
             }
         }
     }
