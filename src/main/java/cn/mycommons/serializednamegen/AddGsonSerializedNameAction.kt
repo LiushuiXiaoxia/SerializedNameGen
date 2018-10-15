@@ -15,7 +15,9 @@ import com.intellij.psi.PsiClass
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiFile
 import com.intellij.psi.PsiJavaFile
+import org.jetbrains.kotlin.idea.refactoring.fqName.getKotlinFqName
 import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtClassBody
 import org.jetbrains.kotlin.psi.KtFile
 
 open class AddGsonSerializedNameAction : AnAction() {
@@ -79,7 +81,11 @@ open class AddGsonSerializedNameAction : AnAction() {
 
             if (project != null) {
                 psiFile.children
-                        .filter { it is PsiClass || it is KtClass }
+                        .filter {
+                            println("PsiFile1 -> $psiFile")
+                            println("it1 -> $it")
+                            it is PsiClass || it is KtClass
+                        }
                         .forEach { modify(project, psiFile, fileType, it) }
             }
         } while (false)
@@ -94,19 +100,32 @@ open class AddGsonSerializedNameAction : AnAction() {
     open fun modify(project: Project, psiFile: PsiFile, fileType: FileType, clazz: PsiElement) {
         // 处理内部类
         clazz.children
-                .filter { it is PsiClass || it is KtClass }
-                .forEach { modify(project, psiFile, fileType, it) }
+                .filter {
+                    println("PsiFile2 -> $psiFile")
+                    println("it2 -> $it")
+                    it is PsiClass
+                            || it is KtClass
+                            || it is KtClassBody
+                }
+                .forEach {
+                    print("it->${it.getKotlinFqName()}")
+                    modify(project, psiFile, fileType, it)
+                }
 
         WriteCommandAction.runWriteCommandAction(project) {
-            val fileModify: IFileModify = when (fileType) {
+            val fileModify: IFileModify? = when (fileType) {
                 FileType.JavaFile -> {
                     JavaImpl(project, psiFile as PsiJavaFile, clazz as PsiClass)
                 }
                 FileType.KotlinFile -> {
-                    KotlinImpl(project, psiFile as KtFile, clazz as KtClass)
+                    when (clazz) {
+                        is KtClass -> KotlinImpl(project, psiFile as KtFile, clazz, null)
+                        is KtClassBody -> KotlinImpl(project, psiFile as KtFile, null, clazz)
+                        else -> null
+                    }
                 }
             }
-            fileModify.modify()
+//            fileModify?.modify()
         }
     }
 }

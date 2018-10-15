@@ -4,10 +4,8 @@ import cn.mycommons.serializednamegen.core.IFileModify
 import com.intellij.openapi.project.Project
 import org.jetbrains.kotlin.lexer.KtModifierKeywordToken
 import org.jetbrains.kotlin.name.FqName
-import org.jetbrains.kotlin.psi.KtClass
-import org.jetbrains.kotlin.psi.KtFile
-import org.jetbrains.kotlin.psi.KtProperty
-import org.jetbrains.kotlin.psi.KtPsiFactory
+import org.jetbrains.kotlin.psi.*
+import org.jetbrains.kotlin.psi.psiUtil.getValueParameters
 import org.jetbrains.kotlin.resolve.ImportPath
 import java.util.*
 
@@ -17,13 +15,15 @@ import java.util.*
  */
 class KotlinImpl(private val project: Project,
                  private val psiFile: KtFile,
-                 private val psiClass: KtClass) : IFileModify {
+                 private val psiClass: KtClass?,
+                 private val classBody: KtClassBody?) : IFileModify {
 
+    private val parameterList: ArrayList<KtParameter> = ArrayList()
     private val propertyList: ArrayList<KtProperty> = ArrayList()
 
     override fun modify() {
         init()
-        if (propertyList.isNotEmpty()) {
+        if (propertyList.isNotEmpty() || parameterList.isNotEmpty()) {
             addImport() // 修改文件和类
             addAnnotation() // 生成方法
         }
@@ -31,10 +31,19 @@ class KotlinImpl(private val project: Project,
 
     private fun init() {
         // 遍历所有字段
-        psiClass.getProperties().forEach {
-            if (it.modifierList?.hasModifier(KtModifierKeywordToken.keywordModifier("static")) == true) {
+
+        if (psiClass != null) {
+            psiClass.getProperties().forEach {
+                propertyList.add(it)
             }
-            propertyList.add(it)
+            parameterList.addAll(psiClass.getValueParameters())
+        }
+
+        if (classBody != null) {
+            classBody.properties.forEach {
+                propertyList.add(it)
+            }
+//            parameterList.addAll(classBody.getValueParameters())
         }
     }
 
@@ -61,6 +70,18 @@ class KotlinImpl(private val project: Project,
                 val name = property.name
                 val entry = psiFactory.createAnnotationEntry("""@SerializedName("$name")""")
                 property.addAnnotationEntry(entry)
+                entry.add(psiFactory.createNewLine())
+            }
+        }
+
+        for (parameter in parameterList) {
+            val annotation = parameter.annotations.find {
+                it.text.contains("@SerializedName")
+            }
+            if (annotation == null) {
+                val name = parameter.name
+                val entry = psiFactory.createAnnotationEntry("""@SerializedName("$name")""")
+                parameter.addAnnotationEntry(entry)
                 entry.add(psiFactory.createNewLine())
             }
         }

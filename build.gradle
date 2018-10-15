@@ -37,7 +37,6 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.71"
-    compile 'com.google.code.gson:gson:2.8.5'
 }
 
 intellij {
