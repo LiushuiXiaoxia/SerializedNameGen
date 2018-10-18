@@ -19,15 +19,15 @@ class JavaImpl(private val project: Project,
 
     private val fields: ArrayList<PsiField> = ArrayList()
 
-    override fun modify() {
-        init()
+    override fun addAnnotation() {
+        findField()
         if (fields.isNotEmpty()) {
             addImport() // 修改文件和类
-            addAnnotation() // 生成方法
+            doAddAnnotation() // 生成方法
         }
     }
 
-    private fun init() {
+    private fun findField() {
         // 遍历所有字段
         for (field in psiClass.fields) {
             val list = field.modifierList
@@ -50,7 +50,7 @@ class JavaImpl(private val project: Project,
         }
     }
 
-    private fun addAnnotation() {
+    private fun doAddAnnotation() {
         for (field in fields) {
             val annotation = field.annotations.find {
                 it.text.contains("@SerializedName")
@@ -59,6 +59,31 @@ class JavaImpl(private val project: Project,
                 val name = field.name
                 field.modifierList?.addAnnotation("""SerializedName("$name")""")
             }
+        }
+    }
+
+    override fun removeAnnotation() {
+        findField()
+        if (fields.isNotEmpty()) {
+            removeImport()
+            doRemoveAnnotation()
+        }
+    }
+
+    private fun removeImport() {
+        // 删除 import SerializedName
+        psiFile.importList?.let { it ->
+            val statementBase = it.findSingleImportStatement("SerializedName")
+            statementBase?.delete()
+        }
+    }
+
+    private fun doRemoveAnnotation() {
+        for (field in fields) {
+            val annotation = field.annotations.find {
+                it.text.contains("@SerializedName")
+            }
+            annotation?.delete()
         }
     }
 }

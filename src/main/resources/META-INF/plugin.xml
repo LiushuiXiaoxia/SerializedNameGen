@@ -1,19 +1,14 @@
 <idea-plugin>
     <id>cn.mycommons.serializednamegen</id>
-    <name>SerializedNameGen</name>
-    <version>0.2</version>
+    <name>SerializedName Tool</name>
     <vendor email="xiaqiulei@126.com"
             url="https://github.com/LiushuiXiaoxia/SerializedNameGen">
         LiushuiXiaoxia
     </vendor>
 
     <description><![CDATA[
-      Auto Generator Gson SerializedName Annotation Plugin.
+      Auto add or remove gson SerializedName annotation plugin, support java and kotlin.
     ]]></description>
-
-    <change-notes><![CDATA[
-    ]]>
-    </change-notes>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
     <idea-version since-build="141.0"/>
@@ -32,12 +27,20 @@
     <actions>
         <!-- Add your actions here -->
         <action id="Add Gson SerializedName"
-                class="cn.mycommons.serializednamegen.AddGsonSerializedNameAction"
+                class="cn.mycommons.serializednamegen.action.gson.GsonAddAction"
                 text="Add Gson SerializedName">
             <add-to-group group-id="CodeMenu"
                           anchor="last"/>
             <add-to-group group-id="GenerateGroup"
-                          anchor="first"/>
+                          anchor="last"/>
+        </action>
+        <action id="Remove Gson SerializedName"
+                class="cn.mycommons.serializednamegen.action.gson.GsonRemoveAction"
+                text="Remove Gson SerializedName">
+            <add-to-group group-id="CodeMenu"
+                          anchor="last"/>
+            <add-to-group group-id="GenerateGroup"
+                          anchor="last"/>
         </action>
     </actions>
 
