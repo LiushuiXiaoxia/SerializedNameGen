@@ -53,3 +53,8 @@ patchPluginXml {
     2.Auto remove gson SerializedName 
     3.Support java and kotlin."""
 }
+
+publishPlugin {
+    username intellijPublishUsername
+    password intellijPublishPassword
+}
