@@ -1,9 +1,9 @@
-package cn.mycommons.serializednamegen.action.base
+package cn.mycommons.jsontool.action.base
 
-import cn.mycommons.serializednamegen.core.FileType
-import cn.mycommons.serializednamegen.core.IFileModify
-import cn.mycommons.serializednamegen.core.impl.JavaImpl
-import cn.mycommons.serializednamegen.core.impl.KotlinImpl
+import cn.mycommons.jsontool.core.FileType
+import cn.mycommons.jsontool.core.IFileModify
+import cn.mycommons.jsontool.core.impl.JavaImpl
+import cn.mycommons.jsontool.core.impl.KotlinImpl
 import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiClass
 import com.intellij.psi.PsiElement

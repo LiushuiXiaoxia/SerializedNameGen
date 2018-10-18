@@ -1,7 +1,7 @@
-package cn.mycommons.serializednamegen.core.impl
+package cn.mycommons.jsontool.core.impl
 
-import cn.mycommons.serializednamegen.core.IFileModify
-import cn.mycommons.serializednamegen.core.JsonType
+import cn.mycommons.jsontool.core.IFileModify
+import cn.mycommons.jsontool.core.JsonType
 import com.intellij.openapi.project.Project
 import org.jetbrains.kotlin.name.FqName
 import org.jetbrains.kotlin.psi.*

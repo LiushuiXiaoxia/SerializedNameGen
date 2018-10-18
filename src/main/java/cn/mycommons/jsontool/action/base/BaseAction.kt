@@ -1,7 +1,7 @@
-package cn.mycommons.serializednamegen.action.base
+package cn.mycommons.jsontool.action.base
 
-import cn.mycommons.serializednamegen.core.FileType
-import cn.mycommons.serializednamegen.core.JsonType
+import cn.mycommons.jsontool.core.FileType
+import cn.mycommons.jsontool.core.JsonType
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.LangDataKeys

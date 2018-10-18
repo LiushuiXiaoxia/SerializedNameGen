@@ -1,4 +1,4 @@
-package cn.mycommons.serializednamegen.core
+package cn.mycommons.jsontool.core
 
 /**
  * JsonType <br>

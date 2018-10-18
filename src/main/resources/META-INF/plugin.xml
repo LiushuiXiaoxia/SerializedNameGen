@@ -29,7 +29,7 @@
     <actions>
         <!-- Add your actions here -->
         <action id="GsonAddAction"
-            class="cn.mycommons.serializednamegen.action.gson.GsonAddAction"
+            class="cn.mycommons.jsontool.action.gson.GsonAddAction"
             text="Add Gson SerializedName">
             <add-to-group group-id="CodeMenu"
                 anchor="last" />
@@ -37,7 +37,7 @@
                 anchor="last" />
         </action>
         <action id="GsonRemoveAction"
-            class="cn.mycommons.serializednamegen.action.gson.GsonRemoveAction"
+            class="cn.mycommons.jsontool.action.gson.GsonRemoveAction"
             text="Remove Gson SerializedName">
             <add-to-group group-id="CodeMenu"
                 anchor="last" />
@@ -46,7 +46,7 @@
         </action>
 
         <action id="FastJsonAddAction"
-            class="cn.mycommons.serializednamegen.action.fastjson.FastJsonAddAction"
+            class="cn.mycommons.jsontool.action.fastjson.FastJsonAddAction"
             text="Add Fastjson JSONField">
             <add-to-group group-id="CodeMenu"
                 anchor="last" />
@@ -54,7 +54,7 @@
                 anchor="last" />
         </action>
         <action id="FastJsonRemoveAction"
-            class="cn.mycommons.serializednamegen.action.fastjson.FastJsonRemoveAction"
+            class="cn.mycommons.jsontool.action.fastjson.FastJsonRemoveAction"
             text="Remove Fastjson JSONField">
             <add-to-group group-id="CodeMenu"
                 anchor="last" />
@@ -63,7 +63,7 @@
         </action>
 
         <action id="JacksonAddAction"
-            class="cn.mycommons.serializednamegen.action.jackson.JacksonAddAction"
+            class="cn.mycommons.jsontool.action.jackson.JacksonAddAction"
             text="Add Jackson JsonProperty">
             <add-to-group group-id="CodeMenu"
                 anchor="last" />
@@ -71,7 +71,7 @@
                 anchor="last" />
         </action>
         <action id="JacksonRemoveAction"
-            class="cn.mycommons.serializednamegen.action.jackson.JacksonRemoveAction"
+            class="cn.mycommons.jsontool.action.jackson.JacksonRemoveAction"
             text="Remove Jackson JsonProperty">
             <add-to-group group-id="CodeMenu"
                 anchor="last" />
