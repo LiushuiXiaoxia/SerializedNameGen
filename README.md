@@ -73,7 +73,8 @@ public class Bean {
 
 ## 支持特性
 
-当前版本为基本版本，仅仅支持Java语言生成`SerializedName`注解。
+* 支持Gson SerializedName添加与删除
+* 支持Java & Kotlin语言
 
 ## 插件下载
 
@@ -93,11 +94,9 @@ public class Bean {
 
 ## 后续规划
 
-* 支持Kotlin语言
-
+* ~~支持Kotlin语言~~
+* ~~支持删除某一种json序列化工具别名~~
 * 支持其他方式json序列化工具
-
-* 支持删除某一种json序列化工具别名
 
 ## 其他工具
 
