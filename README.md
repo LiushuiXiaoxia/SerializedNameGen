@@ -82,11 +82,13 @@ public class Bean {
 
 [插件地址](https://plugins.jetbrains.com/plugin/11225-gsonserializednamegen)
 
-![插件安装](https://raw.githubusercontent.com/LiushuiXiaoxia/SerializedNameGen/master/docs/2.png)
+搜索 `SerializedName Tool`
+
+![插件安装](https://raw.githubusercontent.com/LiushuiXiaoxia/SerializedNameGen/master/docs/4.png)
 
 ## 示例演示
 
-![示例演示](https://raw.githubusercontent.com/LiushuiXiaoxia/SerializedNameGen/master/docs/1.gif)
+![示例演示](https://raw.githubusercontent.com/LiushuiXiaoxia/SerializedNameGen/master/docs/3.gif)
 
 # 其他
 
