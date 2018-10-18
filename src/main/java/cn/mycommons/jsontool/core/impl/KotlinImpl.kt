@@ -1,5 +1,6 @@
 package cn.mycommons.jsontool.core.impl
 
+import cn.mycommons.jsontool.core.FileType
 import cn.mycommons.jsontool.core.IFileModify
 import cn.mycommons.jsontool.core.JsonType
 import com.intellij.openapi.project.Project
@@ -65,7 +66,7 @@ class KotlinImpl(private val project: Project,
             }
             if (annotation == null) {
                 val name = property.name
-                val entry = psiFactory.createAnnotationEntry(jsonType.genAnnotationText(name!!))
+                val entry = psiFactory.createAnnotationEntry(jsonType.genAnnotationText(name!!, FileType.KotlinFile))
                 property.addAnnotationEntry(entry)
                 entry.add(psiFactory.createNewLine())
             }
@@ -77,7 +78,7 @@ class KotlinImpl(private val project: Project,
             }
             if (annotation == null) {
                 val name = parameter.name
-                val entry = psiFactory.createAnnotationEntry(jsonType.genAnnotationText(name!!))
+                val entry = psiFactory.createAnnotationEntry(jsonType.genAnnotationText(name!!, FileType.KotlinFile))
                 parameter.addAnnotationEntry(entry)
                 entry.add(psiFactory.createNewLine())
             }

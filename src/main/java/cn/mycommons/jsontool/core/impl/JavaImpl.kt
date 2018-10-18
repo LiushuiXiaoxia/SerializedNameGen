@@ -1,5 +1,6 @@
 package cn.mycommons.jsontool.core.impl
 
+import cn.mycommons.jsontool.core.FileType
 import cn.mycommons.jsontool.core.IFileModify
 import cn.mycommons.jsontool.core.JsonType
 import com.intellij.openapi.project.Project
@@ -59,7 +60,7 @@ class JavaImpl(private val project: Project,
             }
             if (annotation == null) {
                 val name = field.name
-                field.modifierList?.addAnnotation(jsonType.genAnnotationText(name))
+                field.modifierList?.addAnnotation(jsonType.genAnnotationText(name, FileType.JavaFile))
             }
         }
     }

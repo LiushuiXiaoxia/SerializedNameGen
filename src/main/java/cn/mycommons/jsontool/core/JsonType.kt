@@ -7,19 +7,30 @@ package cn.mycommons.jsontool.core
 enum class JsonType(val classPackage: String, val annotationName: String) {
 
     Gson("com.google.gson.annotations", "SerializedName") {
-        override fun genAnnotationText(fieldNam: String): String {
-            return """$annotationName("$fieldNam")"""
+        override fun genAnnotationText(fieldName: String?, fileType: FileType): String {
+            return if (fileType == FileType.JavaFile) {
+                """$annotationName("$fieldName")"""
+            } else {
+                """@$annotationName("$fieldName")"""
+            }
         }
     },
-    Jackson("com.fasterxml.jackson.annotationName", "JsonProperty") {
-        override fun genAnnotationText(fieldNam: String): String {
-            return """$annotationName("$fieldNam")"""
+    Jackson("com.fasterxml.jackson.annotation", "JsonProperty") {
+        override fun genAnnotationText(fieldName: String?, fileType: FileType): String {
+            return if (fileType == FileType.JavaFile) {
+                """$annotationName("$fieldName")"""
+            } else {
+                """@$annotationName("$fieldName")"""
+            }
         }
     },
-    FastJson("com.alibaba.fastjson.annotationName", "JSONField") {
-        override fun genAnnotationText(fieldNam: String): String {
-            return """$annotationName(name = "$fieldNam")"""
-
+    FastJson("com.alibaba.fastjson.annotation", "JSONField") {
+        override fun genAnnotationText(fieldName: String?, fileType: FileType): String {
+            return if (fileType == FileType.JavaFile) {
+                """$annotationName(name = "$fieldName")"""
+            } else {
+                """@$annotationName(name = "$fieldName")"""
+            }
         }
     };
 
@@ -27,7 +38,7 @@ enum class JsonType(val classPackage: String, val annotationName: String) {
         return "JsonType(classPackage='$classPackage', annotationName='$annotationName')"
     }
 
-    abstract fun genAnnotationText(fieldNam: String): String
+    abstract fun genAnnotationText(fieldName: String?, fileType: FileType): String
 
     fun getFullName() = "$classPackage.$annotationName"
 }

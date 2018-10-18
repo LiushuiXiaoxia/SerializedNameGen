@@ -1,9 +1,9 @@
 package cn.mycommons.jsontool.action.jackson
 
-import cn.mycommons.jsontool.action.base.AddAction
+import cn.mycommons.jsontool.action.base.RemoveAction
 import cn.mycommons.jsontool.core.JsonType
 
-open class JacksonRemoveAction : AddAction() {
+open class JacksonRemoveAction : RemoveAction() {
 
     override fun getJsonType(): JsonType = JsonType.Jackson
 }
