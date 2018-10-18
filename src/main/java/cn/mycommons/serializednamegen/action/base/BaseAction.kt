@@ -1,6 +1,7 @@
 package cn.mycommons.serializednamegen.action.base
 
 import cn.mycommons.serializednamegen.core.FileType
+import cn.mycommons.serializednamegen.core.JsonType
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.LangDataKeys
@@ -95,4 +96,6 @@ abstract class BaseAction : AnAction() {
     }
 
     abstract fun doModify(project: Project, psiFile: PsiFile, fileType: FileType, clazz: PsiElement)
+
+    abstract fun getJsonType(): JsonType
 }

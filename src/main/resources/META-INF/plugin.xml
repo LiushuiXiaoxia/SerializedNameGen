@@ -2,7 +2,7 @@
     <id>cn.mycommons.serializednamegen</id>
     <name>SerializedName Tool</name>
     <vendor email="xiaqiulei@126.com"
-            url="https://github.com/LiushuiXiaoxia/SerializedNameGen">
+        url="https://github.com/LiushuiXiaoxia/SerializedNameGen">
         LiushuiXiaoxia
     </vendor>
 
@@ -11,7 +11,7 @@
     ]]></description>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-    <idea-version since-build="141.0"/>
+    <idea-version since-build="141.0" />
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
@@ -28,21 +28,55 @@
 
     <actions>
         <!-- Add your actions here -->
-        <action id="Add Gson SerializedName"
-                class="cn.mycommons.serializednamegen.action.gson.GsonAddAction"
-                text="Add Gson SerializedName">
+        <action id="GsonAddAction"
+            class="cn.mycommons.serializednamegen.action.gson.GsonAddAction"
+            text="Add Gson SerializedName">
             <add-to-group group-id="CodeMenu"
-                          anchor="last"/>
+                anchor="last" />
             <add-to-group group-id="GenerateGroup"
-                          anchor="last"/>
+                anchor="last" />
         </action>
-        <action id="Remove Gson SerializedName"
-                class="cn.mycommons.serializednamegen.action.gson.GsonRemoveAction"
-                text="Remove Gson SerializedName">
+        <action id="GsonRemoveAction"
+            class="cn.mycommons.serializednamegen.action.gson.GsonRemoveAction"
+            text="Remove Gson SerializedName">
             <add-to-group group-id="CodeMenu"
-                          anchor="last"/>
+                anchor="last" />
             <add-to-group group-id="GenerateGroup"
-                          anchor="last"/>
+                anchor="last" />
+        </action>
+
+        <action id="FastJsonAddAction"
+            class="cn.mycommons.serializednamegen.action.fastjson.FastJsonAddAction"
+            text="Add Fastjson JSONField">
+            <add-to-group group-id="CodeMenu"
+                anchor="last" />
+            <add-to-group group-id="GenerateGroup"
+                anchor="last" />
+        </action>
+        <action id="FastJsonRemoveAction"
+            class="cn.mycommons.serializednamegen.action.fastjson.FastJsonRemoveAction"
+            text="Remove Fastjson JSONField">
+            <add-to-group group-id="CodeMenu"
+                anchor="last" />
+            <add-to-group group-id="GenerateGroup"
+                anchor="last" />
+        </action>
+
+        <action id="JacksonAddAction"
+            class="cn.mycommons.serializednamegen.action.jackson.JacksonAddAction"
+            text="Add Jackson JsonProperty">
+            <add-to-group group-id="CodeMenu"
+                anchor="last" />
+            <add-to-group group-id="GenerateGroup"
+                anchor="last" />
+        </action>
+        <action id="JacksonRemoveAction"
+            class="cn.mycommons.serializednamegen.action.jackson.JacksonRemoveAction"
+            text="Remove Jackson JsonProperty">
+            <add-to-group group-id="CodeMenu"
+                anchor="last" />
+            <add-to-group group-id="GenerateGroup"
+                anchor="last" />
         </action>
     </actions>
 

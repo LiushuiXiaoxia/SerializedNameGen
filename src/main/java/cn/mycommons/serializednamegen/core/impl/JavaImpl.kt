@@ -1,6 +1,7 @@
 package cn.mycommons.serializednamegen.core.impl
 
 import cn.mycommons.serializednamegen.core.IFileModify
+import cn.mycommons.serializednamegen.core.JsonType
 import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiClass
 import com.intellij.psi.PsiElementFactory
@@ -15,7 +16,8 @@ import java.util.*
  */
 class JavaImpl(private val project: Project,
                private val psiFile: PsiJavaFile,
-               private val psiClass: PsiClass) : IFileModify {
+               private val psiClass: PsiClass,
+               private val jsonType: JsonType) : IFileModify {
 
     private val fields: ArrayList<PsiField> = ArrayList()
 
@@ -42,9 +44,9 @@ class JavaImpl(private val project: Project,
 
         // 添加importSerializedName
         psiFile.importList?.let { it ->
-            if (it.findSingleImportStatement("SerializedName") == null) {
+            if (it.findSingleImportStatement(jsonType.annotationName) == null) {
                 val factory = PsiElementFactory.SERVICE.getInstance(project)
-                val statement = factory.createImportStatementOnDemand("com.google.gson.annotations")
+                val statement = factory.createImportStatementOnDemand(jsonType.classPackage)
                 styleManager.shortenClassReferences(it.add(statement))
             }
         }
@@ -53,11 +55,11 @@ class JavaImpl(private val project: Project,
     private fun doAddAnnotation() {
         for (field in fields) {
             val annotation = field.annotations.find {
-                it.text.contains("@SerializedName")
+                it.text.contains(jsonType.annotationName)
             }
             if (annotation == null) {
                 val name = field.name
-                field.modifierList?.addAnnotation("""SerializedName("$name")""")
+                field.modifierList?.addAnnotation(jsonType.genAnnotationText(name))
             }
         }
     }
@@ -73,7 +75,7 @@ class JavaImpl(private val project: Project,
     private fun removeImport() {
         // 删除 import SerializedName
         psiFile.importList?.let { it ->
-            val statementBase = it.findSingleImportStatement("SerializedName")
+            val statementBase = it.findSingleImportStatement(jsonType.annotationName)
             statementBase?.delete()
         }
     }
@@ -81,7 +83,7 @@ class JavaImpl(private val project: Project,
     private fun doRemoveAnnotation() {
         for (field in fields) {
             val annotation = field.annotations.find {
-                it.text.contains("@SerializedName")
+                it.text.contains(jsonType.annotationName)
             }
             annotation?.delete()
         }

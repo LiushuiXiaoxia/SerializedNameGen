@@ -1,6 +1,7 @@
 package cn.mycommons.serializednamegen.core.impl
 
 import cn.mycommons.serializednamegen.core.IFileModify
+import cn.mycommons.serializednamegen.core.JsonType
 import com.intellij.openapi.project.Project
 import org.jetbrains.kotlin.name.FqName
 import org.jetbrains.kotlin.psi.*
@@ -15,7 +16,8 @@ import java.util.*
 class KotlinImpl(private val project: Project,
                  private val psiFile: KtFile,
                  private val psiClass: KtClass?,
-                 private val classBody: KtClassBody?) : IFileModify {
+                 private val classBody: KtClassBody?,
+                 private val jsonType: JsonType) : IFileModify {
 
     private val parameterList: ArrayList<KtParameter> = ArrayList()
     private val propertyList: ArrayList<KtProperty> = ArrayList()
@@ -47,7 +49,7 @@ class KotlinImpl(private val project: Project,
     }
 
     private fun addImport() {
-        val import = "com.google.gson.annotations.SerializedName"
+        val import = jsonType.getFullName()
         val psiFactory = KtPsiFactory(project)
         val importDirective = psiFactory.createImportDirective(ImportPath(FqName(import), false))
         if (psiFile.importDirectives.none { it.importPath == importDirective.importPath }) {
@@ -59,11 +61,11 @@ class KotlinImpl(private val project: Project,
         val psiFactory = KtPsiFactory(project)
         for (property in propertyList) {
             val annotation = property.annotationEntries.find {
-                it.text.contains("@SerializedName")
+                it.text.contains(jsonType.annotationName)
             }
             if (annotation == null) {
                 val name = property.name
-                val entry = psiFactory.createAnnotationEntry("""@SerializedName("$name")""")
+                val entry = psiFactory.createAnnotationEntry(jsonType.genAnnotationText(name!!))
                 property.addAnnotationEntry(entry)
                 entry.add(psiFactory.createNewLine())
             }
@@ -71,11 +73,11 @@ class KotlinImpl(private val project: Project,
 
         for (parameter in parameterList) {
             val annotation = parameter.annotationEntries.find {
-                it.text.contains("@SerializedName")
+                it.text.contains(jsonType.annotationName)
             }
             if (annotation == null) {
                 val name = parameter.name
-                val entry = psiFactory.createAnnotationEntry("""@SerializedName("$name")""")
+                val entry = psiFactory.createAnnotationEntry(jsonType.genAnnotationText(name!!))
                 parameter.addAnnotationEntry(entry)
                 entry.add(psiFactory.createNewLine())
             }
@@ -92,7 +94,7 @@ class KotlinImpl(private val project: Project,
 
     private fun doRemoveImport() {
         val psiFactory = KtPsiFactory(project)
-        val s = "com.google.gson.annotations.SerializedName"
+        val s = jsonType.getFullName()
         val importDirective = psiFactory.createImportDirective(ImportPath(FqName(s), false))
         val none = psiFile.importDirectives.find { it.importPath == importDirective.importPath }
         none?.delete()
@@ -101,7 +103,7 @@ class KotlinImpl(private val project: Project,
     private fun doRemoveAnnotation() {
         for (property in propertyList) {
             for (entry in property.annotationEntries) {
-                if (entry.text.contains("@SerializedName")) {
+                if (entry.text.contains("@${jsonType.annotationName}")) {
                     entry.delete()
                 }
             }
@@ -109,7 +111,7 @@ class KotlinImpl(private val project: Project,
 
         for (parameter in parameterList) {
             for (entry in parameter.annotationEntries) {
-                if (entry.text.contains("@SerializedName")) {
+                if (entry.text.contains("@${jsonType.annotationName}")) {
                     entry.delete()
                     break
                 }
