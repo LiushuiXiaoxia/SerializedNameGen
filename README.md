@@ -4,9 +4,11 @@
 
 GsonSerializedNameGen 是一个自动生成Gson SerializedName注解的插件。
 
-[下载地址](https://github.com/LiushuiXiaoxia/SerializedNameGen/tree/master/jars)
+[IEDA插件仓库地址](https://plugins.jetbrains.com/plugin/11225-serializedname-tool)
 
-[插件地址](https://plugins.jetbrains.com/plugin/11225-gsonserializednamegen)
+[插件下载地址](https://github.com/LiushuiXiaoxia/SerializedNameGen/tree/master/jars)
+
+[插件Github地址](https://github.com/LiushuiXiaoxia/SerializedNameGen)
 
 # 介绍
 
@@ -78,9 +80,9 @@ public class Bean {
 
 ## 插件下载
 
-[下载地址](https://github.com/LiushuiXiaoxia/SerializedNameGen/tree/master/jars)
+[IEDA插件仓库地址](https://plugins.jetbrains.com/plugin/11225-serializedname-tool)
 
-[插件地址](https://plugins.jetbrains.com/plugin/11225-gsonserializednamegen)
+[插件下载地址](https://github.com/LiushuiXiaoxia/SerializedNameGen/tree/master/jars)
 
 搜索 `SerializedName Tool`
 
