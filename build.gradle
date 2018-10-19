@@ -15,7 +15,7 @@ apply plugin: 'java'
 apply plugin: 'org.jetbrains.intellij'
 
 group 'cn.mycommons'
-version '0.3'
+version '0.4'
 
 sourceCompatibility = 1.8
 
