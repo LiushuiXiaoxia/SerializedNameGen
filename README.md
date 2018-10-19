@@ -75,7 +75,9 @@ public class Bean {
 
 ## 支持特性
 
-* 支持Gson SerializedName添加与删除
+* 支持Gson SerializedName 注解添加与删除
+* 支持Fastjson JSONField 注解添加与删除
+* 支持Jackson JsonProperty 注解添加与删除
 * 支持Java & Kotlin语言
 
 ## 插件下载
@@ -100,7 +102,7 @@ public class Bean {
 
 * ~~支持Kotlin语言~~
 * ~~支持删除某一种json序列化工具别名~~
-* 支持其他方式json序列化工具
+* ~~支持其他方式json序列化工具~~
 
 ## 其他工具
 
@@ -112,6 +114,21 @@ public class Bean {
 
 # 日志
 
+* v0.4
+
+    - 支持Gson SerializedName 注解添加与删除
+    - 支持Fastjson JSONField 注解添加与删除
+    - 支持Jackson JsonProperty 注解添加与删除
+    - 支持Java & Kotlin语言
+
+* v0.3
+
+    - 支持 Gson SerializedName 的删除
+
+* v0.2
+
+    - 优化代码
+
 * v0.1
 
-第一个版本，实现基本功能
+    - 第一个版本，实现基本功能，支持添加Gson SerializedName
