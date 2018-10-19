@@ -48,10 +48,11 @@ intellij {
     sandboxDirectory = "$project.buildDir/myCustom-sandbox"
 }
 
+
+
 patchPluginXml {
-    changeNotes """1.Auto add gson SerializedName 
-    2.Auto remove gson SerializedName 
-    3.Support java and kotlin."""
+    changeNotes """Auto add or remove json annotation plugin, such as gson SerializedName,
+ fastjson JSONField, jackson JsonProperty. It also support java and kotlin file."""
 }
 
 publishPlugin {
