@@ -2,7 +2,9 @@ package cn.mycommons.jsontool.core.impl
 
 import cn.mycommons.jsontool.core.FileType
 import cn.mycommons.jsontool.core.IFileModify
+import cn.mycommons.jsontool.core.IGenerateRule
 import cn.mycommons.jsontool.core.JsonType
+import cn.mycommons.jsontool.core.gen.OriginGenerateImpl
 import com.intellij.openapi.project.Project
 import org.jetbrains.kotlin.name.FqName
 import org.jetbrains.kotlin.psi.*
@@ -18,7 +20,8 @@ class KotlinImpl(private val project: Project,
                  private val psiFile: KtFile,
                  private val psiClass: KtClass?,
                  private val classBody: KtClassBody?,
-                 private val jsonType: JsonType) : IFileModify {
+                 private val jsonType: JsonType,
+                 private val generateRule: IGenerateRule = OriginGenerateImpl()) : IFileModify {
 
     private val parameterList: ArrayList<KtParameter> = ArrayList()
     private val propertyList: ArrayList<KtProperty> = ArrayList()
@@ -41,11 +44,9 @@ class KotlinImpl(private val project: Project,
             parameterList.addAll(psiClass.getValueParameters())
         }
 
-        if (classBody != null) {
-            classBody.properties.forEach {
-                propertyList.add(it)
-            }
-//            parameterList.addAll(classBody.getValueParameters())
+        classBody?.properties?.forEach {
+            propertyList.add(it)
+            // parameterList.addAll(classBody.getValueParameters())
         }
     }
 
@@ -65,8 +66,8 @@ class KotlinImpl(private val project: Project,
                 it.text.contains(jsonType.annotationName)
             }
             if (annotation == null) {
-                val name = property.name
-                val entry = psiFactory.createAnnotationEntry(jsonType.genAnnotationText(name!!, FileType.KotlinFile))
+                val name = generateRule.gen(property.name ?: "")
+                val entry = psiFactory.createAnnotationEntry(jsonType.genAnnotationText(name, FileType.KotlinFile))
                 property.addAnnotationEntry(entry)
                 entry.add(psiFactory.createNewLine())
             }
@@ -77,8 +78,8 @@ class KotlinImpl(private val project: Project,
                 it.text.contains(jsonType.annotationName)
             }
             if (annotation == null) {
-                val name = parameter.name
-                val entry = psiFactory.createAnnotationEntry(jsonType.genAnnotationText(name!!, FileType.KotlinFile))
+                val name = generateRule.gen(parameter.name ?: "")
+                val entry = psiFactory.createAnnotationEntry(jsonType.genAnnotationText(name, FileType.KotlinFile))
                 parameter.addAnnotationEntry(entry)
                 entry.add(psiFactory.createNewLine())
             }

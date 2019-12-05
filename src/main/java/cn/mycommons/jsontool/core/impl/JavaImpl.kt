@@ -2,7 +2,9 @@ package cn.mycommons.jsontool.core.impl
 
 import cn.mycommons.jsontool.core.FileType
 import cn.mycommons.jsontool.core.IFileModify
+import cn.mycommons.jsontool.core.IGenerateRule
 import cn.mycommons.jsontool.core.JsonType
+import cn.mycommons.jsontool.core.gen.OriginGenerateImpl
 import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiClass
 import com.intellij.psi.PsiElementFactory
@@ -18,7 +20,8 @@ import java.util.*
 class JavaImpl(private val project: Project,
                private val psiFile: PsiJavaFile,
                private val psiClass: PsiClass,
-               private val jsonType: JsonType) : IFileModify {
+               private val jsonType: JsonType,
+               private val generateRule: IGenerateRule = OriginGenerateImpl()) : IFileModify {
 
     private val fields: ArrayList<PsiField> = ArrayList()
 
@@ -59,7 +62,7 @@ class JavaImpl(private val project: Project,
                 it.text.contains(jsonType.annotationName)
             }
             if (annotation == null) {
-                val name = field.name
+                val name = generateRule.gen(field.name)
                 field.modifierList?.addAnnotation(jsonType.genAnnotationText(name, FileType.JavaFile))
             }
         }
