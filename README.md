@@ -96,7 +96,7 @@ public class Bean {
 
 ## 规则配置
 
-![示例演示](https://raw.githubusercontent.com/LiushuiXiaoxia/SerializedNameGen/master/docs/4.gif)
+![示例演示](https://raw.githubusercontent.com/LiushuiXiaoxia/SerializedNameGen/master/docs/5.gif)
 
 
 # 其他
