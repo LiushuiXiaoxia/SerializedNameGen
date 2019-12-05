@@ -53,7 +53,9 @@ patchPluginXml {
  fastjson JSONField, jackson JsonProperty. It also support java and kotlin file."""
 }
 
-publishPlugin {
-    username intellijPublishUsername
-    password intellijPublishPassword
+if (project.hasProperty('intellijPublishUsername') && project.hasProperty('intellijPublishPassword')) {
+    publishPlugin {
+        username intellijPublishUsername
+        password intellijPublishPassword
+    }
 }
