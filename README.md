@@ -94,6 +94,11 @@ public class Bean {
 
 ![示例演示](https://raw.githubusercontent.com/LiushuiXiaoxia/SerializedNameGen/master/docs/3.gif)
 
+## 规则配置
+
+![示例演示](https://raw.githubusercontent.com/LiushuiXiaoxia/SerializedNameGen/master/docs/4.gif)
+
+
 # 其他
 
 第一个版本，实现有点仓促，如果有问题，欢迎交流，xiaqiulei@126.com。
@@ -114,21 +119,31 @@ public class Bean {
 
 # 日志
 
-* v0.4
+## v1.0
 
-    - 支持Gson SerializedName 注解添加与删除
-    - 支持Fastjson JSONField 注解添加与删除
-    - 支持Jackson JsonProperty 注解添加与删除
-    - 支持Java & Kotlin语言
+- 支持生成规则配置
+- 生成规则
+    * Origin
+    * Uppercase
+    * Lowercase
+    * Underline
+    * Smart
 
-* v0.3
+## v0.4
 
-    - 支持 Gson SerializedName 的删除
+- 支持Gson SerializedName 注解添加与删除
+- 支持Fastjson JSONField 注解添加与删除
+- 支持Jackson JsonProperty 注解添加与删除
+- 支持Java & Kotlin语言
 
-* v0.2
+## v0.3
 
-    - 优化代码
+- 支持 Gson SerializedName 的删除
 
-* v0.1
+## v0.2
 
-    - 第一个版本，实现基本功能，支持添加Gson SerializedName
+- 优化代码
+
+## v0.1
+
+- 第一个版本，实现基本功能，支持添加Gson SerializedName

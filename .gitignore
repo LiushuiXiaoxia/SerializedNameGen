@@ -5,3 +5,6 @@ build
 .gradle
 classes
 gradle.properties
+
+myCustom-sandbox
+sandbox
