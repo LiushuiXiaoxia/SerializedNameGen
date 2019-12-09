@@ -49,7 +49,7 @@ class JavaImpl(private val project: Project,
         // 添加importSerializedName
         psiFile.importList?.let { it ->
             if (it.findSingleImportStatement(jsonType.annotationName) == null) {
-                val factory = PsiElementFactory.SERVICE.getInstance(project)
+                val factory = PsiElementFactory.getInstance(project)
                 val statement = factory.createImportStatementOnDemand(jsonType.classPackage)
                 styleManager.shortenClassReferences(it.add(statement))
             }

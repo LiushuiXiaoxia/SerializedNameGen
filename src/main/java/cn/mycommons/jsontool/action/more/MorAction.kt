@@ -1,5 +1,6 @@
 package cn.mycommons.jsontool.action.more
 
+import cn.mycommons.jsontool.action.util.isFileOk
 import cn.mycommons.jsontool.core.FileType
 import cn.mycommons.jsontool.core.IFileModify
 import cn.mycommons.jsontool.core.IGenerateRule
@@ -25,27 +26,8 @@ import org.jetbrains.kotlin.psi.KtFile
 
 class MorAction : AnAction() {
 
-    override fun update(event: AnActionEvent?) {
-        super.update(event)
-
-        if (event != null) {
-            event.presentation.isVisible = isFileOk(event)
-        }
-    }
-
-    private fun isFileOk(e: AnActionEvent): Boolean {
-        val virtualFile = e.getData(PlatformDataKeys.VIRTUAL_FILE)
-        val psiFile = e.getData(LangDataKeys.PSI_FILE)
-
-        val isVFOk = virtualFile?.name?.toLowerCase()?.endsWith("java") ?: false
-        val isPsiOk = psiFile?.name?.toLowerCase()?.endsWith("java") ?: false
-
-        val isKtVFOk = virtualFile?.name?.toLowerCase()?.endsWith("kt") ?: false
-        val isKtPsiOk = psiFile?.name?.toLowerCase()?.endsWith("kt") ?: false
-
-        val isJava = isVFOk && isPsiOk
-        val isKt = isKtVFOk && isKtPsiOk
-        return isJava || isKt
+    override fun update(event: AnActionEvent) {
+        event.presentation.isVisible = isFileOk(event)
     }
 
     override fun actionPerformed(event: AnActionEvent) {

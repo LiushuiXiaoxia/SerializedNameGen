@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-./gradlew clean publishPlugin
+./gradlew clean publishPlugin --stacktrace

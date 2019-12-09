@@ -6,16 +6,16 @@ buildscript {
 
 plugins {
     id 'java'
-    id 'org.jetbrains.intellij' version '0.3.12'
-    id 'org.jetbrains.kotlin.jvm' version '1.2.71'
+    id 'org.jetbrains.intellij' version '0.4.15'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.50'
 }
 
-apply plugin: 'idea'
-apply plugin: 'java'
-apply plugin: 'org.jetbrains.intellij'
+repositories {
+    mavenCentral()
+}
 
 group 'cn.mycommons'
-version '0.5'
+version '0.6'
 
 sourceCompatibility = 1.8
 
@@ -31,19 +31,14 @@ compileTestKotlin {
     }
 }
 
-repositories {
-    mavenCentral()
-}
-
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.71"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.50"
 }
 
 intellij {
-    version '2018.2.2'
-    // version 'IC-2016.3'
-
-    plugins 'kotlin'
+    pluginName 'JSON Annotation Tool'
+    version '2019.3'
+    plugins = ['java', 'Kotlin']
     updateSinceUntilBuild false
     sandboxDirectory = "${project.rootDir}/sandbox"
 }
@@ -53,8 +48,11 @@ patchPluginXml {
  fastjson JSONField, jackson JsonProperty. It also support java and kotlin file."""
 }
 
-if (project.hasProperty('intellijPublishUsername') && project.hasProperty('intellijPublishPassword')) {
+if (project.hasProperty('intellijPublishUsername')
+        && project.hasProperty('intellijPublishPassword')
+        && project.hasProperty('intellijPublishToken')) {
     publishPlugin {
+        token intellijPublishToken
         username intellijPublishUsername
         password intellijPublishPassword
     }
