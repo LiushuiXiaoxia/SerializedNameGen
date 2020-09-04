@@ -119,6 +119,17 @@ public class Bean {
 
 # 日志
 
+## v0.8
+
+- 添加`FirstUppercase`生成规则
+- 生成规则
+    * Origin
+    * Uppercase
+    * FirstUppercase
+    * Lowercase
+    * Underline
+    * Smart
+    
 ## v0.7
 
 - 支持生成规则配置
