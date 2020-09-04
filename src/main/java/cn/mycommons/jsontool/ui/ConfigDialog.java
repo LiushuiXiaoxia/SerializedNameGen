@@ -23,6 +23,7 @@ public class ConfigDialog {
     private JRadioButton lowercaseRadioButton;
     private JRadioButton underlineRadioButton;
     private JRadioButton smartRadioButton;
+    private JRadioButton firstUppercaseRadioButton;
 
     private JRadioButton jacksonRadioButton;
     private JRadioButton gsonRadioButton;
@@ -82,12 +83,12 @@ public class ConfigDialog {
         List<JRadioButton> buttons = Arrays.asList(
                 originRadioButton, uppercaseRadioButton,
                 lowercaseRadioButton, underlineRadioButton,
-                smartRadioButton
+                smartRadioButton, firstUppercaseRadioButton
         );
         List<IGenerateRule> rules = Arrays.asList(
                 new OriginGenerateImpl(), new UppercaseGenerateImpl(),
                 new LowercaseGenerateImpl(), new UnderlineGenerateImpl(),
-                new SmartGenerateImpl()
+                new SmartGenerateImpl(), new FirstUppercaseGenerateImpl()
         );
 
         ChangeListener listener = e -> {
