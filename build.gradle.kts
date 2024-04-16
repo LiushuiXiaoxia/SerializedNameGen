@@ -24,17 +24,8 @@ intellij {
     type.set("IC") // Target IDE Platform
 
     plugins.set(listOf("com.intellij.java", "org.jetbrains.kotlin"))
-    // plugins.set(listOf("java", "kotlin"))
-    // sandboxDirectory.set("${project.rootDir}/sandbox")
+    sandboxDir.set("${project.rootDir}/sandbox")
 }
-
-//intellij {
-//    pluginName 'JSON Annotation Tool'
-//    version '2019.3'
-//    plugins = ['java', 'Kotlin']
-//    updateSinceUntilBuild false
-//    sandboxDirectory = "${project.rootDir}/sandbox"
-//}
 
 tasks {
     // Set the JVM compatibility versions
@@ -46,9 +37,11 @@ tasks {
         kotlinOptions.jvmTarget = "11"
     }
 
+    val n = """Auto add or remove json annotation plugin, such as gson SerializedName,
+ fastjson JSONField, jackson JsonProperty. It also support java and kotlin file."""
+
     patchPluginXml {
-//        changeNotes """Auto add or remove json annotation plugin, such as gson SerializedName,
-// fastjson JSONField, jackson JsonProperty. It also support java and kotlin file."""
+        changeNotes.set(n)
         sinceBuild.set("232")
         untilBuild.set("242.*")
     }
