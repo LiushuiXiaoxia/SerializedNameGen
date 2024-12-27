@@ -48,14 +48,14 @@ public class ConfigDialog {
 
     void init() {
         okButton.addActionListener(e -> {
-            dialog.hide();
+            dialog.dispose();
 
             if (onCallback != null) {
                 onCallback.onOk(jsonType, generateRule);
             }
         });
         cancelButton.addActionListener(e -> {
-            dialog.hide();
+            dialog.dispose();
 
             if (onCallback != null) {
                 onCallback.onCancel();
