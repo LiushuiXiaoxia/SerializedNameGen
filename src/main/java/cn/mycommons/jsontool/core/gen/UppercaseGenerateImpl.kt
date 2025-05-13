@@ -7,5 +7,5 @@ import cn.mycommons.jsontool.core.IGenerateRule
  */
 class UppercaseGenerateImpl : IGenerateRule {
 
-    override fun gen(name: String): String = name.toUpperCase()
+    override fun gen(name: String): String = name.uppercase()
 }

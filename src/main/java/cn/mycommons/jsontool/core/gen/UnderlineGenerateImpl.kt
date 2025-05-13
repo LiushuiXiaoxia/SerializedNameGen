@@ -12,7 +12,7 @@ class UnderlineGenerateImpl : IGenerateRule {
         if (list.isNotEmpty()) {
             val sb = StringBuilder()
             list.forEach {
-                sb.append(it.toLowerCase()).append("_")
+                sb.append(it.lowercase()).append("_")
             }
             if (sb.isNotEmpty()) {
                 sb.deleteCharAt(sb.length - 1)
