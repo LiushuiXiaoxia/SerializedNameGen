@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
+
 plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "2.1.20"
@@ -28,16 +31,18 @@ intellij {
     sandboxDir.set("${project.rootDir}/sandbox")
 }
 
-tasks {
-    // Set the JVM compatibility versions
-    withType<JavaCompile> {
-        sourceCompatibility = "17"
-        targetCompatibility = "17"
-    }
-    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions.jvmTarget = "17"
-    }
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 
+}
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_17)
+    }
+}
+
+tasks {
     val n = """Auto add or remove json annotation plugin, such as gson SerializedName,
  fastjson JSONField, jackson JsonProperty. It also support java and kotlin file."""
 
