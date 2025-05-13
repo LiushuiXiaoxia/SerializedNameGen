@@ -33,7 +33,7 @@ public class ConfigDialog {
     private IGenerateRule generateRule = null;
     private OnCallback onCallback;
 
-    private JDialog dialog;
+    private final JDialog dialog;
 
     public ConfigDialog() {
         dialog = new JDialog();
