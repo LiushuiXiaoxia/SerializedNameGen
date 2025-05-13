@@ -8,6 +8,7 @@ group = "cn.mycommons"
 version = "1.2"
 
 repositories {
+    maven { setUrl("https://maven.aliyun.com/repository/public/") }
     mavenCentral()
     gradlePluginPortal()
 }
